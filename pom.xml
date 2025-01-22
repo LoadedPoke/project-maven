@@ -78,6 +78,22 @@
                 </configuration>
             </plugin>
 
+            <!-- JAR creation -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader</mainClass>
+                            <Rsrc-Main-Class>com.javarush.games.racer.RacerGame</Rsrc-Main-Class>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <!-- Run java-fx app over Maven -->
             <plugin>
                 <groupId>org.openjfx</groupId>
